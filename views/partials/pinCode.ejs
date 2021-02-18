@@ -1,0 +1,8 @@
+<label class="formLabel" for="pinCode"><%= pinCodeLabel %></label>
+<input id="pinCode" class="input" name="pinCode" type="password" maxlength="6" pattern="[0-9]{6}" value="" required/>
+<span id="pinOneError" class="formErrorMessage"><%= translation.pinOneErrorMessage %></span>
+<p class="inputExplanatoryText"><%= translation.pinCodeExplanatoryText %></p>
+
+<label class="formLabel" for="repeatPinCode"><%= translation.pinCodeRepeat %></label>
+<input id="repeatPinCode" class="input" name="pinCodeRepeat" type="password" maxlength="6" pattern="[0-9]{6}" value="" required/>  
+<span id="pinTwoError" class="formErrorMessage"><%= translation.pinRepeatErrorMessage %></span>

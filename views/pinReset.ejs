@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/header.ejs', { title: translation.registrationForm }) %>
+  <body>
+    <!-- <%- include('partials/logo.ejs') %> -->
+
+    <main class="container">
+      <a href="http://www.lib.chalmers.se/"><img class="logo-name" src="images/Biblioteket_RGB_EN_20190917.png" alt="Chalmers Library"></a>
+      <h1><%- translation.newPinHeader %></h1>
+      <form method="POST" onsubmit="return validatePinReset()">
+        <%- include('partials/pinCode.ejs', { pinCodeLabel: translation.pinCode, translation: translation }) %>
+        <input id="personnummer" name="personnummer" value="<%= personNummer %>" type="text" hidden>
+        <input name="t" value="<%= token %>" type="text" hidden>
+        <button id="submitbtn" type="submit" class="submitbtn"><%- translation.send %></button>
+      </form>
+      <section class="footer-text">
+        <p><%- translation.needHelp %></p>
+    </section>    
+  </main>
+  </body>
+</html>

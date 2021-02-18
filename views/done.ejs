@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/header.ejs', { title: translation.donePageTitle }) %>
+  <body>
+    <!-- <%- include('partials/logo.ejs') %> -->
+    <!-- Hidden, for accessibility compliance -->
+    <a class="skip-main" href="#container">Skip to main content</a>
+    
+    <main class="container" id="container">
+      <a href="http://www.lib.chalmers.se/"><img class="logo-name" src="images/Biblioteket_RGB_EN_20190917.png" alt="Chalmers Library"></a>
+      <h1><%= translation.accountActivatedHeader %> <%= fname %> <%= lname %>!</h1>
+      <section class="main-page__text-container">
+        <% if (isChalmersUser) { %>
+          <p><%- translation.accountActivatedTextChalmers %></p>
+        <% } else { %>
+          <p><%- translation.accountActivatedTextPublic %></p>
+        <% } %>
+      </section>
+      <section class="footer-text"><p>
+        <%- translation.moreInfo %><br>
+        <%- translation.needHelp %></p>
+    </section>    
+   </main>
+  </body>
+</html>

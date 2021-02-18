@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/header.ejs', { title: translation.libraryAccountRegistration }) %>
+  <body>
+    <!-- <%- include('partials/logo.ejs') %> -->
+    <!-- Hidden, for accessibility compliance -->
+    <a class="skip-main" href="#container">Skip to main content</a>
+
+    <main class="container" id="container">
+      <%- include('partials/changeLanguage.ejs', { changeLanguage: changeLanguage }) %>
+      <a href="http://www.lib.chalmers.se/"><img class="logo-name" src="images/Biblioteket_RGB_EN_20190917.png" alt="Chalmers Library"></a>
+      <h1><%= translation.createALibraryAccount %></h1>
+      <section class="body-text">  <%- translation.welcomeText %>
+      </section>
+
+      <div class="multibtn-container">
+        <a href="/login?language=<%= language %>"><button class="multibtn"><%= translation.chalmersButton %></button></a>
+        <a href="/regform?language=<%= language %>"><button class="multibtn"><%= translation.publicButton %></button></a>
+      </div>
+
+    <section class="footer-text">
+      <p><%- translation.forgotPin %>
+        <br>
+      <%- translation.moreInfo %>
+        <br>
+      <%- translation.needHelp %></p>
+  </section>
+    </main>
+
+    <div class="debug"><%if (user != null && process.env.NODE_ENV == 'development') { %> <%=
+      JSON.stringify(user) %> <% } %></div>
+
+  </body>
+</html>

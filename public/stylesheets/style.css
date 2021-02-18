@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(https://www.lib.chalmers.se/img/page-bg.jpg);
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #262626;
+}
+
+p {
+    margin-bottom: 1.5rem
+}
+
+h1 {
+    padding: 50px 5px;
+    text-align: center;
+    font-size: 2.1rem;
+    line-height: 1.5;
+    font-weight: 300;
+    text-rendering: optimizelegibility;
+}
+
+/* Header  */
+
+.logo-name {
+    width: 60%;
+    margin-top: 20px;
+}
+
+.changeLanguage {
+    float: right;
+    margin-top: 20px;
+}
+
+/* Containers */
+
+.container {
+    box-sizing: border-box;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 0px 30px 20px;
+    background-color: #fff;
+}
+
+/* Text */
+
+.body-text {
+    padding: 0px 20px;
+}
+
+/* Footer */
+
+.footer-text {
+    padding: 20px 20px 0px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+
+/* Welcome page  */
+
+.multibtn-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr) [col-start]);
+    margin: 40px auto;
+    padding: 0px 20px;
+    gap: 20px;
+
+}
+
+.multibtn {
+    width: 100%;
+    padding: 1rem 40px;
+    margin: 8px auto;
+    background-color:#006C5C;
+    opacity: 0.9;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.multibtn:hover {
+    background-color: #00A99D;
+}
+
+/* Registration and Change PIN form */
+
+.form-field {
+    margin: 0 0 1rem;
+    font-size: 1.1rem;
+}
+
+.terms-of-use {
+    margin: 0 0 1rem;
+    padding: 1rem 1rem;
+}
+
+.input[type=text], .input[type=password], .input[type=email] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+    margin: 6px 0 6px 0;
+    display: inline-block;
+    border: solid;
+    border-color: #f8f8f8;
+    border-width: 1px;
+    background: #f8f8f8;
+    font-size: 1rem;
+    color: #262626;
+}
+
+.inputReadOnly {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px 0px;
+    margin: 0;
+    display: inline-block;
+    border: solid;
+    border-color: #fff;
+    border-width: 1px;
+    font-size: 1rem;
+    color: #595959;
+}
+
+input:focus {
+    outline: none;
+}
+
+.inputExplanatoryText {
+    font-size: 0.9rem;
+}
+
+.submitbtn {
+    width: 100%;
+    padding: 1rem 40px;
+    margin: 8px auto;
+    background-color: #006C5C;
+    opacity: 0.9;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submitbtn:hover {
+    background-color: #00A99D;
+}
+
+/* Invisible honeypot field */
+.honey {
+    position: absolute;
+    top: -100vw;
+    left: -100vh;
+}
+
+/* Error handling */
+
+.public-alert {
+    border-color: #f47b4e;
+    border-style: dotted;
+    padding: 1rem 1rem 0 1rem;
+}
+
+.formErrorMessage {
+    display: none;
+    color: red;
+}
+
+.debug {
+    padding: 25px;
+    text-align: left;
+}
+
+/* Horizontal color pane */
+
+.logo-part {
+    height: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    display: inline-block;
+    padding-bottom: 25px;
+}
+
+.chalmers-lib-logo {
+    top: 0;
+    height: 18px;
+    margin-top: 0;
+    padding-bottom: 25px;
+    margin-bottom: 15px;
+}
+
+.chalmers-lib-logo .part1 {
+    background-color: #ffe999;
+    width: 28%
+}
+
+.chalmers-lib-logo .part2 {
+    background-color: #ffb7b5;
+    width: 18%
+}
+
+.chalmers-lib-logo .part3 {
+    background-color: #ffd8d6;
+    width: 18%
+}
+
+.chalmers-lib-logo .part4 {
+    background-color: #8bcbef;
+    width: 12%
+}
+
+.chalmers-lib-logo .part5 {
+    background-color: #85deff;
+    width: 12%
+}
+
+.chalmers-lib-logo .part6 {
+    background-color: #aee9ff;
+    width: 12%
+}
+
+a.skip-main {
+    left:-999px;
+    position:absolute;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    z-index:-999;
+}
+a.skip-main:focus, a.skip-main:active {
+    color: #fff;
+    background-color:#000;
+    left: auto;
+    top: auto;
+    width: 30%;
+    height: auto;
+    overflow:auto;
+    margin: 10px 35%;
+    padding:5px;
+    border-radius: 15px;
+    border:4px solid yellow;
+    text-align:center;
+    font-size:1.2em;
+    z-index:999;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header.ejs', { title: translation.registrationForm }) %>
+
+<body>
+  <!-- <%- include('partials/logo.ejs') %> -->
+
+  <main class="container">
+    <%- include('partials/changeLanguage.ejs', { changeLanguage: changeLanguage }) %>
+    <a href="http://www.lib.chalmers.se/"><img class="logo-name" src="images/Biblioteket_RGB_EN_20190917.png"
+        alt="Chalmers Library"></a>
+    <h1><%= translation.registrationForm %></h1>
+
+    <form action="/done?language=<%= language %>" method="post" onsubmit="return validateChalmersForm()">
+
+      <div class="form-field">
+        <label class="formLabel" for="personNummer"><%= translation.personNummer %></label>
+        <input id="personnummer" class="inputReadOnly" name="personNummer" value="<%= person.personNummer %>"
+          type="text" pattern="[0-9]{6,8}-?[0-9]{4}" placeholder="YYMMDD-XXXX" readonly required>
+      </div>
+      <div class="form-field">
+        <label class="formLabel" for="firstName"><%= translation.firstName %></label>
+        <input class="inputReadOnly" name="firstName" type="text" value="<%= person.firstName %>" readonly required />
+      </div>
+      <div class="form-field">
+        <label class="formLabel" for="lastName"><%= translation.lastName %></label>
+        <input class="inputReadOnly" name="lastName" type="text" value="<%= person.lastName %>" readonly required />
+      </div>
+      <div class="form-field">
+        <label class="formLabel" for="email"><%= translation.eMailAdress %></label>
+        <input id="email" class="input" name="email" type="email" value="<%= person.email %>" required />
+        <span id="emailError" class="formErrorMessage"><%= translation.emailErrorMessage %></span>
+      </div>
+      <div class="form-field">
+        <input name="cid" value="<%= person.cid %>" style="display:none" readonly>
+      </div>
+      <div class="form-field">
+        <input name="patronGroup" value="<%= person.patronGroup %>" style="display:none" readonly>
+      </div>
+      <div class="form-field">
+        <%- include('partials/pinCode.ejs', { pinCodeLabel: translation.pinCodeAuthenticated, translation: translation }) %>
+      </div>
+
+      <div class="terms-of-use">
+        <input id="terms" name="terms" type="checkbox" required />
+        <label for="terms"><%- translation.iAcceptTheTermsOfUse %></label>
+      </div>
+      <input id="submitbtn" class="submitbtn" type="submit" value="<%= translation.send %>" />
+
+    </form>
+
+    <section class="footer-text">
+      <p>
+        <%- translation.needHelp %></p>
+    </section>
+  </main>
+</body>
+
+</html>

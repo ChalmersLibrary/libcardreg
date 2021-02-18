@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/header.ejs', { title: translation.registrationForm }) %>
+  <body>
+    <!-- <%- include('partials/logo.ejs') %> -->
+    <!-- Hidden, for accessibility compliance -->
+    <a class="skip-main" href="#container">Skip to main content</a>
+
+    <main class="container" id="container">
+      <%- include('partials/changeLanguage.ejs', { changeLanguage: changeLanguage }) %>
+      <a href="http://www.lib.chalmers.se/"><img class="logo-name" src="images/Biblioteket_RGB_EN_20190917.png" alt="Chalmers Library"></a>
+      <h1><%= translation.registrationForm %></h1>
+
+      <form id="regForm" action="/done?language=<%= language %>" method="post" onsubmit="return validateRegForm()">
+          <div class="form-field">
+            <label class="formLabel" for="personNummer"><%= translation.personNummer %></label>
+            <input id="personNummer" class="input" name="personNummer" value="<%= person.personNummer %>" type="text" pattern="[0-9]{6,8}-?[0-9]{4}" placeholder="YYMMDD-XXXX" required />
+            <span id="personnummerError" class="formErrorMessage"><%= translation.personnummerErrorMessage %></span>
+          </div>
+          <div class="form-field">
+            <label class="formLabel" for="firstName"><%= translation.firstName %></label>
+            <input id="firstName" class="input" name="firstName" type="text" value="<%= person.firstName %>" required />
+            <span id="firstNameError" class="formErrorMessage"><%= translation.firstNameErrorMessage %></span>
+          </div>
+            <div class="form-field">
+            <label class="formLabel" for="lastName"><%= translation.lastName %></label>
+            <input id="lastName" class="input" name="lastName" type="text" value="<%= person.lastName %>" required />
+            <span id="lastNameError" class="formErrorMessage"><%= translation.lastNameErrorMessage %></span>
+          </div>  
+          <div class="form-field">
+            <label class="formLabel" for="email"><%= translation.eMailAdress %></label>
+            <input id="email" class="input" name="fnbjm" type="email" value="<%= person.email %>" required/>
+            <span id="emailError" class="formErrorMessage"><%= translation.emailErrorMessage %></span>
+          </div>
+          <div class="form-field honey">
+            <label class="formLabel" for="main">Leave this field blank if you are human</label>
+            <input class="input" name="main" id="main" type="email" value="" autocomplete="off" tabindex="-1" placeholder="Your e-mail here"/>
+          </div>
+          <div class="form-field">
+              <%- include('partials/pinCode.ejs', { pinCodeLabel: translation.pinCode, translation: translation }) %>
+            </div>
+        <div class="terms-of-use">
+          <input id="terms" name="terms" type="checkbox" required />
+          <label for="terms"><%- translation.iAcceptTheTermsOfUse %></label>
+        </div>
+
+        <input id="submitbtn" class="submitbtn" type="submit" value="<%= translation.send %>"/>
+
+      </form>
+
+      <section class="footer-text">
+        <p>
+        <%- translation.needHelp %></p>
+    </section>    
+  </main>
+  </body>
+</html>

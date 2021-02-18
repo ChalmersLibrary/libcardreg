@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Log in with CID</title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Merriweather:400,300,700" rel="stylesheet" type="text/css" />
+      </head>
+<body>
+    <!-- <%- include('partials/logo.ejs') %> -->
+    <main class="container">
+        <a href="http://www.lib.chalmers.se/"><img class="logo-name" src="images/Biblioteket_RGB_EN_20190917.png" alt="Chalmers Library"></a>
+        <h1>Logga in</h1>
+        <form action="/regform" method="post">
+        <section>
+                <label>
+                    CID
+                    <input name="cid" type="text" placeholder="Enter CID" required>
+                </label>
+            </section>
+            <input type="submit" value="Skicka" />
+        </form>
+    </main>
+</body>
+</html>

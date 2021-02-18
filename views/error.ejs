@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/header.ejs', { title: translation.libraryAccountRegistration }) %>
+  <body>
+    <!-- <%- include('partials/logo.ejs') %> -->
+    <!-- Hidden, for accessibility compliance -->
+    <a class="skip-main" href="#container">Skip to main content</a>
+
+    <main class="container" id="container">
+      <a href="http://www.lib.chalmers.se/"><img class="logo-name" src="images/Biblioteket_RGB_EN_20190917.png" alt="Chalmers Library"></a>
+      <h1><%= title %></h1>
+      <section class="body-text">
+        <p><%- body %></p>
+      </section>
+    </main>
+    <% if ((typeof error === 'string' || typeof error === 'object') && error) { %>
+    <div class="debug" id="debug">
+        <p>
+          <strong>Detailed error (debug):</strong>
+        </p><%= message %><p>
+          <pre><%= error %></pre>
+        </p>
+    </div>
+    <% } %>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/header.ejs', { title: translation.registrationForm }) %>
+  <body>
+    <!-- <%- include('partials/logo.ejs') %> -->
+
+    <main class="container">
+      <a href="http://www.lib.chalmers.se/"><img class="logo-name" src="images/Biblioteket_RGB_EN_20190917.png" alt="Chalmers Library"></a>
+      <h1><%- translation.resetEmailSentHeader %></h1>
+      <section class="body-text">
+        <p><%- translation.resetEmailSentText %></p>
+        <!-- <div class="public-alert"><p><%- translation.temporaryEmailIssue %></p></div> -->
+    </section>
+    <section class="footer-text">
+      <p><%- translation.needHelp %></p>
+  </section> 
+    </main>
+  </body>
+</html>
